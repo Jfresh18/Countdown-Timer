@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Countdown Timer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple countdown timer application that takes in an inputted date/time    
+and displays a countdown with React useState from now until the given date/time.  
 
-Currently, two official plugins are available:
+<img src="public/initialappimg.png" width=705 height=400 alt="Countdown timer screenshot">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Current Features
 
-## React Compiler
+- Currently uses a hardcoded target date for a _very important_ event :) 
+- Displays the countdown for the target date on a nice looking box with a title and description
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+- Typescript and React
+- Vite
+- Tailwindcss
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Future Updates
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- User input for a target date + optional title and description
+- Customization of the timer:
+  - BG Color (gradient or solid)
+  - Font for title/desc
+  - Font for timer (different than title/desc)
+  - Other simple css : i.e box shadow
+- JSON Export and Import to locally save a timer
+- Finalize app styles
+- User input menu component
+- Style changer menu component
+- Mobile support
+- Tests for making sure the times are correct (who knows at this point)
+- Host with Netlify? Platform not finalized 
+- Animation or sound on timer finish
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Try it out before launch!
+- `git clone` the repository
+- `cd` into the newly cloned repo
+- run `npm install` in your terminal
+- run `npm run dev` in your terminal 
+- Navigate to `localhost:5173` in your browser
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
